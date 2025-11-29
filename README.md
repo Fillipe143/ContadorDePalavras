@@ -37,9 +37,9 @@ Para amostras médias (50% do texto), observa-se uma inversão na hierarquia de 
 Para amostras completas (100% do texto), a superioridade da Parallel GPU torna-se ainda mais evidente, processando os textos completos em tempos significativamente inferiores. A Parallel CPU consolida sua vantagem sobre a versão serial, com ganhos de desempenho que variam entre 55-65% dependendo do arquivo processado.
 <table>
   <tr>
-    <td><img scr="https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_10.png" width= "100%"></td>
-    <td><img src="https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/escalabilidade_amostra_50.png" width="100%"></td>
-    <td><img src="https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/escalabilidade_amostra_100.png" width="100%"></td>
+    <td><img scr="[https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_10.png](https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_10.png)" width= "100%"></td>
+    <td><img src="[https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/escalabilidade_amostra_50.png](https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_50.png)" width="100%"></td>
+    <td><img src="[https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/escalabilidade_amostra_100.png](https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_100.png)" width="100%"></td>
   </tr>
 </table>
 Analise de escalabilidade como comportamento com aumento de Threads fez com que a paralelização produzisse efeitos distintos conforme o tamanho das amostras analisadas. Para amostras pequenas, a curva de escalabilidade demonstra ganhos limitados com o aumento do número de threads. A partir de 4 threads, os benefícios adicionais tornam-se marginalmente decrescentes, indicando que o overhead de gerenciamento começa a superar os ganhos de paralelismo para cargas reduzidas.
@@ -91,4 +91,5 @@ Em trabalhos futuros, seria interessante explorar estratégias híbridas que com
 [Disponível em:](https://www.linkedin.com/pulse/splitting-llms-across-multiple-gpus-techniques-tools-best-yjikc/)
 
 ##**Anexos**
+
 [https://github.com/Fillipe143/ContadorDePalavras/](https://github.com/Fillipe143/ContadorDePalavras/)
