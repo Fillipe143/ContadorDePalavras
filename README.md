@@ -90,4 +90,4 @@ Em trabalhos futuros, seria interessante explorar estratégias híbridas que com
 [Disponível em:](https://www.linkedin.com/pulse/splitting-llms-across-multiple-gpus-techniques-tools-best-yjikc/)
 
 ##**Anexos**
-[GitHub](https://github.com/Fillipe143/ContadorDePalavras/)
+[https://github.com/Fillipe143/ContadorDePalavras/](https://github.com/Fillipe143/ContadorDePalavras/)
