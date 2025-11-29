@@ -43,11 +43,7 @@ Para amostras completas (100% do texto), a superioridade da Parallel GPU torna-s
   </tr>
 </table>
 Analise de escalabilidade como comportamento com aumento de Threads fez com que a paralelização produzisse efeitos distintos conforme o tamanho das amostras analisadas. Para amostras pequenas, a curva de escalabilidade demonstra ganhos limitados com o aumento do número de threads. A partir de 4 threads, os benefícios adicionais tornam-se marginalmente decrescentes, indicando que o overhead de gerenciamento começa a superar os ganhos de paralelismo para cargas reduzidas.
- <table>
-  <tr>
-    <td><img scr="https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/escalabilidade_amostra_10.png" width= "100%"></td>
-  </tr>
-</table>
+![Escalabilidade amostra 10.png 10%](https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/escalabilidade_amostra_10.png)
 Para amostras médias, observa-se uma escalabilidade mais eficiente, com reduções consistentes no tempo de processamento até 8 threads. A lei de Amdahl é claramente visível, onde a parte paralelizável do algoritmo é melhor aproveitada com volumes intermediários de dados.
 Para amostras completas, a escalabilidade atinge seu máximo potencial, demonstrando reduções quase lineares no tempo de processamento até 16 threads. Isto indica que para grandes volumes de dados, o algoritmo possui alta eficiência de paralelização, com ganhos significativos mesmo com número elevado de threads.
 <table>
