@@ -1,4 +1,5 @@
 #**Análise comparativa de algoritmos com uso de paralelismo**
+
 Alunos:
 - Fillipe - 2315058
 - Kalil - 2223857
