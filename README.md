@@ -1,19 +1,19 @@
-#**Análise comparativa de algoritmos com uso de paralelismo**
+# **Análise comparativa de algoritmos com uso de paralelismo**
 
 Alunos:
 - Fillipe - 2315058
 - Kalil - 2223857
 
-##**Resumo**
+## **Resumo**
 Este trabalho apresenta uma análise comparativa do desempenho de algoritmos de busca e contagem de palavras executados de forma serial e paralela em Java. Foram implementadas três versões do algoritmo: uma execução serial na CPU, uma execução paralela na CPU utilizando 1, 2, 4, 8 e 16 threads, e uma execução paralela na GPU empregando OpenCL por meio da biblioteca JOCL. Para avaliar o impacto do paralelismo, foram utilizados textos com diferentes tamanhos (10%, 50% e 100% de cada livro), permitindo observar o comportamento dos algoritmos sob variação de carga de processamento. Os tempos de execução foram registrados em arquivos CSV e analisados por meio de gráficos gerados com JFreeChart. Os resultados obtidos evidenciam as diferenças de desempenho entre as abordagens, destacando os ganhos de velocidade obtidos com o aumento de threads na CPU e os desafios associados ao uso de GPU para tarefas baseadas em manipulação de texto. O estudo contribui para a compreensão prática da eficiência de técnicas de paralelismo em ambientes multicore e GPU, oferecendo subsídios para decisões de otimização em aplicações que lidam com grandes volumes de dados textuais.
 
-##Introdução 
+## Introdução 
 O aumento do volume de dados processados por aplicações modernas tem intensificado a necessidade de algoritmos mais eficientes, especialmente em tarefas como a busca e contagem de palavras em grandes textos. Nesse cenário, o uso de paralelismo em arquiteturas multicore e GPU surge como uma alternativa relevante para acelerar processos tradicionalmente executados de forma sequencial.
 Este trabalho realiza uma análise comparativa entre três abordagens de contagem de palavras em Java: uma versão serial na CPU, uma versão paralela em CPU utilizando diferentes quantidades de threads (1, 2, 4, 8 e 16), e uma versão paralela em GPU utilizando OpenCL por meio da biblioteca JOCL. Para avaliar o impacto do paralelismo, foram utilizados textos de tamanhos variados, considerando 10%, 50% e 100% de cada obra, permitindo observar como o desempenho se comporta conforme o volume de dados cresce.
 Os tempos de execução obtidos foram registrados em arquivos CSV e posteriormente analisados visualmente por meio de gráficos gerados com JFreeChart, possibilitando comparar eficiência, escalabilidade e comportamento dos algoritmos nos diferentes cenários testados.
 Assim, esta introdução contextualiza a importância da análise de desempenho entre métodos seriais e paralelos e apresenta a abordagem adotada no estudo, que busca identificar como CPU e GPU respondem às variações no tamanho dos dados e no grau de paralelismo empregado.
 
-##**Metodologia**
+## **Metodologia**
 A metodologia adotada para construção deste trabalho foi estruturada em etapas que envolvem desenvolvimento, execução e análise de desempenho de algoritmos de busca e contagem de palavras em suas versões sequenciais e paralelas, incluindo implementação em GPU.
 Algoritmos implementados: Serial CPU Searcher, Parallel CPU Searcher e Parallel GPU Searcher. Cada algoritmo foi desenvolvido em diferentes versões:
 Sequencial: execução linear utilizando estruturas tradicionais da linguagem Java com loops aninhados.
@@ -30,16 +30,16 @@ A execução dos experimentos foi realizada utilizando as diferentes amostras de
 Para cada execução foram registrados: nome do arquivo, tamanho em bytes, nome do algoritmo, quantidade de threads utilizadas, número de ocorrências encontradas e tempo de execução em milissegundos.
 Os resultados foram armazenados em um arquivo CSV gerado pelo programa, facilitando a análise dos dados coletados por meio de comparação de tempos entre abordagens serial e paralela, avaliação de ganho de desempenho em função do número de threads, análise de escalabilidade conforme aumento do tamanho dos dados e observação do comportamento da GPU em tarefas de manipulação textual. Com isso, foi possível identificar padrões de performance e eficiência real da paralelização em cada abordagem, bem como os limites de escalabilidade para diferentes volumes de dados.
 
-##**Resultados e Discussão**
+## **Resultados e Discussão**
 Os testes conduzidos com três tamanhos de amostras de texto (10%, 50% e 100%) trouxeram resultados obtidos a partir da execução dos algoritmos que confirmaram o comportamento esperado em relação ao paralelismo e escalabilidade. O algoritmo Serial CPU apresentou desempenho consistente com complexidade linear O(n), mantendo tempos de execução proporcionais ao tamanho dos dados em todas as amostras. Já as versões paralelas demonstraram comportamentos distintos conforme o volume de dados processados.
 Para amostras pequenas (10% do texto), o algoritmo Serial CPU apresentou melhor desempenho, seguido pela Parallel GPU. Este comportamento pode ser atribuído ao overhead de inicialização e comunicação entre threads nas abordagens paralelas, que se torna mais significativo em relação ao tempo total de processamento quando o volume de dados é reduzido. A Parallel CPU mostrou tempos intermediários, indicando que o custo de gerenciamento de threads não é compensado pelo ganho em paralelismo em cargas leves.
 Para amostras médias (50% do texto), observa-se uma inversão na hierarquia de desempenho. A Parallel GPU assume a liderança, demonstrando sua eficiência em processamento massivo de dados. A Parallel CPU apresenta melhoria significativa em relação à versão serial, reduzindo o tempo de processamento em aproximadamente 40-50%. O algoritmo Serial CPU mantém comportamento linear, porém com tempos superiores às abordagens paralelas.
 Para amostras completas (100% do texto), a superioridade da Parallel GPU torna-se ainda mais evidente, processando os textos completos em tempos significativamente inferiores. A Parallel CPU consolida sua vantagem sobre a versão serial, com ganhos de desempenho que variam entre 55-65% dependendo do arquivo processado.
 <table>
   <tr>
-    <td><img scr="[https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_10.png](https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_10.png)" width= "100%"></td>
-    <td><img src="[https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/escalabilidade_amostra_50.png](https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_50.png)" width="100%"></td>
-    <td><img src="[https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/escalabilidade_amostra_100.png](https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_100.png)" width="100%"></td>
+    <td><img scr="https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_10.png" width= "100%"></td>
+    <td><img src="https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_50.png" width="100%"></td>
+    <td><img src="https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_100.png" width="100%"></td>
   </tr>
 </table>
 Analise de escalabilidade como comportamento com aumento de Threads fez com que a paralelização produzisse efeitos distintos conforme o tamanho das amostras analisadas. Para amostras pequenas, a curva de escalabilidade demonstra ganhos limitados com o aumento do número de threads. A partir de 4 threads, os benefícios adicionais tornam-se marginalmente decrescentes, indicando que o overhead de gerenciamento começa a superar os ganhos de paralelismo para cargas reduzidas.
@@ -68,7 +68,7 @@ Para grandes volumes de texto: A GPU apresenta vantagem clara em desempenho.
 Os resultados também destacam a importância de considerar as características específicas da aplicação - incluindo tamanho médio dos textos, frequência de execução e recursos hardware disponíveis - na seleção da estratégia de implementação mais adequada.
 Em trabalhos futuros, seria interessante explorar estratégias híbridas que combinem as vantagens das diferentes abordagens, bem como investigar técnicas de pré-processamento e otimização que possam reduzir o overhead associado ao paralelismo, particularmente na transferência de dados para a GPU.
 
-##**Referências** 
+## **Referências** 
 [1] ZHANG, A. et al. **Múltiplas GPUs**. In: #Dive into Deep Learning#, 2023.
 [Disponível em:](https://pt.d2l.ai/chapter_computational-performance/multiple-gpus.html)
 
@@ -90,6 +90,6 @@ Em trabalhos futuros, seria interessante explorar estratégias híbridas que com
 [7] SILVA, J. **Dividindo LLMs em Múltiplas GPUs: Técnicas, Ferramentas e Melhores Práticas**. LinkedIn, 2023.
 [Disponível em:](https://www.linkedin.com/pulse/splitting-llms-across-multiple-gpus-techniques-tools-best-yjikc/)
 
-##**Anexos**
+## **Anexos**
 
 [https://github.com/Fillipe143/ContadorDePalavras/](https://github.com/Fillipe143/ContadorDePalavras/)
