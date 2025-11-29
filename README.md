@@ -36,7 +36,7 @@ Para amostras pequenas (10% do texto), o algoritmo Serial CPU apresentou melhor 
 <table>
   <tr>
     <td><img scr="https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/comparacao_amostra_10.png" width= "100%"></td>
-    </tr>
+  </tr>
 </table>
 Para amostras médias (50% do texto), observa-se uma inversão na hierarquia de desempenho. A Parallel GPU assume a liderança, demonstrando sua eficiência em processamento massivo de dados. A Parallel CPU apresenta melhoria significativa em relação à versão serial, reduzindo o tempo de processamento em aproximadamente 40-50%. O algoritmo Serial CPU mantém comportamento linear, porém com tempos superiores às abordagens paralelas.
 Para amostras completas (100% do texto), a superioridade da Parallel GPU torna-se ainda mais evidente, processando os textos completos em tempos significativamente inferiores. A Parallel CPU consolida sua vantagem sobre a versão serial, com ganhos de desempenho que variam entre 55-65% dependendo do arquivo processado.
@@ -49,8 +49,8 @@ Para amostras completas (100% do texto), a superioridade da Parallel GPU torna-s
 Analise de escalabilidade como comportamento com aumento de Threads fez com que a paralelização produzisse efeitos distintos conforme o tamanho das amostras analisadas. Para amostras pequenas, a curva de escalabilidade demonstra ganhos limitados com o aumento do número de threads. A partir de 4 threads, os benefícios adicionais tornam-se marginalmente decrescentes, indicando que o overhead de gerenciamento começa a superar os ganhos de paralelismo para cargas reduzidas.
  <table>
   <tr>
-    <td><img scr="https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/escalabilidade_amostra_10.png" width= "100%">       </td>
- </tr>
+    <td><img scr="https://github.com/Fillipe143/ContadorDePalavras/blob/main/res/graficos/escalabilidade_amostra_10.png" width= "100%"></td>
+  </tr>
 </table>
 Para amostras médias, observa-se uma escalabilidade mais eficiente, com reduções consistentes no tempo de processamento até 8 threads. A lei de Amdahl é claramente visível, onde a parte paralelizável do algoritmo é melhor aproveitada com volumes intermediários de dados.
 Para amostras completas, a escalabilidade atinge seu máximo potencial, demonstrando reduções quase lineares no tempo de processamento até 16 threads. Isto indica que para grandes volumes de dados, o algoritmo possui alta eficiência de paralelização, com ganhos significativos mesmo com número elevado de threads.
